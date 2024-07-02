@@ -8,13 +8,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(cors(
-  {
-  origin: ["https://cello-repertoire-initiative-frontend-3rqssrojt.vercel.app/"],
-  methods: ["POST", "GET"],
-  credentials: true
-  }
-))
+app.use(cors())
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
