@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-  origin: ["https://cello-repertoire-initiative-1whq.vercel.app"],
+  origin: ["https://cello-repertoire-initiative-api.vercel.app"],
   methods: ["POST", "GET"],
   credentials: true
   }
