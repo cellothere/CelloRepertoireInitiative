@@ -6,14 +6,14 @@ function App() {
   const [newItem, setNewItem] = useState({ title: '', composer: '', price: '' });
 axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get('/api/sheetmusic').then((response) => {
+    axios.get('https://cello-repertoire-initiative-api.vercel.app/api/sheetmusic').then((response) => {
       setSheetMusic(response.data);
     });
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('api/sheetmusic', newItem).then((response) => {
+    axios.post('https://cello-repertoire-initiative-api.vercel.app/api/sheetmusic', newItem).then((response) => {
       setSheetMusic([...sheetMusic, response.data]);
       setNewItem({ title: '', composer: '', price: '' });
     });
